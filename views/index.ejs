@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <link rel="stylesheet" href="./stylesheets/main.css">
+</head>
+<body>
+    <div id="header">
+        <p id="logo">
+            <a href="/">광주소프트웨어마이스터고등학교</a>
+        </p>
+        <h1>
+           Special Lecture Calendar
+        </h1>
+    </div>
+    <div id=menu>
+        <div class="user_box">
+            <p><img src="user_s.png" id="userpic"></p>
+            <a href="/login" id="log_out">[로그아웃]</a>
+            <h4><%= name %></h4>
+        </div>
+        <div id="home">
+            <a href="/" id="home_text">홈으로</a>
+        </div>
+        <div id="check">
+            <a href="/mypage" id="check_text">마이페이지</a>
+        </div>
+        <ul class="vertical-menu">
+                <li><a href="소감문 게시판.html">소감문 게시판</a></li>
+                <li><a href="특강신청.html">특강 신청</a></li>
+        </ul>
+        <div class="name_box">
+            <h1>
+                Calendar
+            </h1>
+            <h2>
+                [전공 특강 달력]
+            </h2>
+        </div>
+    </div>
+    <iframe src="./Calendar.html" frameborder="0" scrolling="no" id="Cal"></iframe>
+   <iframe src="./Impormation.html" frameborder="0"scrolling="no" id="Imp" name="imp"></iframe>
+</body>
+</html>
