@@ -22,7 +22,8 @@ router.post('/', function (req, res) {
         var userId = req.body.user_name;
         var userPw = req.body.user_password;
         console.log('userId: ', userId);
-
+        console.log('userPw: ', userPw);
+        console.log(req.body);
         db.get(`select * from person where user_name="${userId}"`, function (err, row) {
             if(err){
                 console.log('error');
@@ -35,6 +36,11 @@ router.post('/', function (req, res) {
                     req.session.isLogin = true;
                     req.session.name = userId;
                     req.session.password = userPw;
+                    req.session.email = row.user_email;
+                    req.session.grade = row.user_grade;
+                    req.session.class_id = row.user_class;
+                    req.session.number = row.user_number;
+
                     console.log(req.session);
                     req.session.save(function(){
                         res.redirect('/');

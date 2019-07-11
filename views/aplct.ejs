@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit</title>
+    <link rel="stylesheet" href="./stylesheets/aplct.css">
+    <script>
+        var temp; 
+		
+		function input(){
+		var title = document.getElementById("title").value; //제목 값 가져오기
+        var stroy = document.getElementById("stroy").value; //내용 값 가져오기
+		temp = input;
+        }
+        function pushbutton() { 
+        alert("제출완료"); 
+        }
+    </script>
+</head>
+<body>
+    <div id="header">
+        <p id="logo">
+            <a href="/">광주소프트웨어마이스터고등학교</a>
+        </p>
+        <h1>
+           Special Lecture Calendar
+        </h1>
+    </div>
+    <div id=menu>
+        <div class="user_box">
+            <p><img src="user_s.png" id="userpic"></p>
+            <a href="/login" id="log_out">[로그아웃]</a>
+            <h4><%= name %></h4>
+        </div>
+        <div id="home">
+            <a href="/" id="home_text">홈으로</a>
+        </div>
+        <div id="check">
+            <a href="/mypage" id="check_text">마이페이지</a>
+        </div>
+        <ul class="vertical-menu">
+                <li><a href="/board">소감문 게시판</a></li>
+                <li><a href="/aplct">소감문 제출</a></li>
+        </ul>
+        <div class="name_box">
+            <h1>
+                소감문 제출
+            </h1>
+            <h2>
+                [소감문 양식]
+            </h2>
+        </div>
+    </div>
+    <form action="/aplct" method="POST">
+        <div>
+            <label for="name" id="name">[강의 제목]</label>
+            <input type="text" id="title" name="title"/>
+        </div>
+        <div>
+            <label for="key-word" id="input">[강의 종류]</label>
+            <input  type="text" id="name" name="kind"/>
+        </div>
+        <div>
+            <label for="msg" id="stroy">[소감문]</label>
+            <textarea id="stroy" name="story"></textarea>
+        </div>
+        <a href="/"><button onclick="pushbutton()">제출하기</button></a>
+    </form> 
+    
+</body>
+</html>

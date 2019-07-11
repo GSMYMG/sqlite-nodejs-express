@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>board</title>
+    <link rel="stylesheet" href="../stylesheets/board_info.css">
+</head>
+<body>
+    <div id="header">
+        <p id="logo">
+            광주소프트웨어마이스터고등학교
+        </p>
+        <h1>
+           Special Lecture Calendar
+        </h1>
+    </div>
+    <div id=menu>
+        <div class="user_box">
+            <p><img src="../user_s.png" id="userpic"></p>
+            <a href="/login" id="log_out">[로그아웃]</a>
+            <h4><%= name %></h4>
+        </div>
+        <div id="home">
+            <a href="/" id="home_text">홈으로</a>
+        </div>
+        <div id="check">
+            <a href="/" id="check_text">마이페이지</a>
+        </div>
+        <ul class="vertical-menu">
+    
+                <li><a href="/board">소감문 게시판</a></li>
+                <li><a href="/aplct">소감문 제출</a></li>
+        </ul>
+        <div class="name_box">
+            <h1>
+                <%= name %>의 소감문
+            </h1>
+            <h2>
+                <%= obj.kind%>
+            </h2>
+        </div>
+    </div>
+    <form class="content">
+        <div>
+            <label for="name" id="name">[작성자]</label>
+            <p><%= obj.user_name %></p>
+        </div>
+        <div>
+            <label for="key-word" id="input">[강의 종류]</label>
+            <p><%= obj.kind %></p>
+        </div>
+        <div>
+            <label for="key-word" id="input">[강의 명]</label>
+            <p><%= obj.title %></p>
+            </div>
+        <div>
+            <label for="msg" id="stroy">[간단한 내용]</label>
+            <p><%= obj.story %></p>
+        </div>
+    </form>    
+</body>
+</html>

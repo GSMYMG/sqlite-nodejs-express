@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var sqlite3 = require('sqlite3');
+var sqlite3 = require('sqlite3').verbose();
+
 
 const db = new sqlite3.Database('./db/my.db', sqlite3.OPEN_READWRITE, (err) => {
   if (err) {
@@ -10,30 +11,36 @@ const db = new sqlite3.Database('./db/my.db', sqlite3.OPEN_READWRITE, (err) => {
   }
 });
 
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('mypage',{name: req.session.name});
-  console.log('')
-  db.all(`SELECT * FROM person`,function(err, row){
-    req.session.email=row.email;
-    req.session.grade=row.grade;
-    req.session.class=row.class;
-    req.session.number=row.number;
+  var obj ={name: req.session.name, password: req.session.password, email: req.session.email, grade: req.session.grade, class_id: req.session.class_id, number: req.session.number};
+  console.log(obj);
+  res.render('mypage', obj);
+  console.log('my get');
+  
+});
 
-    console.log( session.email);
-    console.log(session.grade);
-    console.log(session.class);
-    console.log( session.number);
-  })
-    
+router.post('/', function(req, res){
+const updateQuery=`UPDATE person SET user_name="${req.body.name}",
+user_password="${req.body.password}",user_email="${req.body.email}",
+user_grade="${req.body.grade}",user_class="${req.body.class_id}",
+user_number="${req.body.number}"WHERE user_name="${req.session.name}"`;
 
+  db.serialize(() => {
+    db.each(updateQuery);
+});
 
-
-  res.render('mypage',{password: req.session.password});
-  res.render('mypage',{email: req.session.email});
-  res.render('mypage',{grade: req.session.grade});
-  res.render('mypage',{class: req.session.class});
-  res.render('mypage',{number: req.session.number});
+req.session.name = req.body.name;
+req.session.password = req.body.password;
+req.session.email = req.body.email;
+req.session.grade = req.body.grade;
+req.session.class_id = req.body.class_id;
+req.session.number = req.body.number;
+  res.redirect('mypage');
+  
 });
 
 module.exports = router;
+
+

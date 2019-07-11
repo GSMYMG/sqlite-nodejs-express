@@ -141,8 +141,8 @@ a{
 }
 .name_box{
     position: relative;
-    top: -137px;
-    left: 260px;
+    top: -138px;
+    left: 261px;
     width: 1665px;
     height: 91px;
     background: #fff;
@@ -171,15 +171,15 @@ form div + div {
 }
 label {
     position: relative;
-    top: -100px;
+    top: -161px;
     display: inline-block;
     width: 400px;
     font-size: 20px;
     font-weight: bold
 }
-input, textarea {
+input{
     position: relative;
-    top: -100px;
+    top: -150px;
     font: 1em sans-serif;
     width: 900px;
     -moz-box-sizing: border-box;
@@ -219,4 +219,21 @@ form{
 position: relative;
 left: -220px;
 }
-
+h2{
+    position: relative;
+    left: 540px;
+    top: 4px;
+}
+#writer_name{
+    position: relative;
+    top: -200px;
+    left: 200px;
+}
+.content{
+    position: relative;
+    top: 80px;
+}
+form p{
+    position: relative;
+    top: -172px;
+}

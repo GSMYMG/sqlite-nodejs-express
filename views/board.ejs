@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>mypage</title>
-    <link rel="stylesheet" href="./stylesheets/mypage.css">
+    <title>list</title>
+    <link rel="stylesheet" href="./stylesheets/board.css">
 </head>
 <body>
     <div id="header">
@@ -14,7 +14,7 @@
            Special Lecture Calendar
         </h1>
     </div>
-    <div id=menu style="height:100px;">
+    <div id=menu>
         <div class="user_box">
             <p><img src="user_s.png" id="userpic"></p>
             <a href="/login" id="log_out">[로그아웃]</a>
@@ -26,37 +26,39 @@
         <div id="check">
             <a href="/mypage" id="check_text">마이페이지</a>
         </div>
-
-        
-
         <ul class="vertical-menu">
             <li><a href="/board">소감문 게시판</a></li>
             <li><a href="/aplct">소감문 제출</a></li>
         </ul>
         <div class="name_box">
             <h1>
-                My_Page
+                소감문 게시판
             </h1>
             <h2>
-                나의 정보 
+                작성 해야할 특강 소감문들
             </h2>
         </div>
-        
     </div>
-    <div class="Post_Box" style="width: 900px; height: 750px; border: 3px soild rgba(213, 235, 238, 0.253);">
-        <form method="POST">
-            이름<br><input type="text" value="<%=name%>" name="name"><br><br>
-            비밀번호<br><input type="password" value="<%=password%>"name="password"><br><br>
-            이메일<br><input type="email" value="<%=email%>"name="email"><br><br>
-            학년<br><input type="text" value="<%=grade%>"name="grade"><br><br>
-            반<br><input type="text" value="<%=class_id%>"name="class_id"><br><br>
-            번호<br><input type="text" value="<%=number%>"name="number"><br><br>
-            <br><input type="submit" value="수정" name="update" id="update">
-    </form>
-        
-       
-    
-</div>
+    <table class="noticeboard">
+        <thead>
+            <tr>
+                <th scope="cols">작성자</th>
+                <th scope="cols">강의 명</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <% for(var i=0; i<list; i++) {%>
+           
+            <tr>
+                <th scope="row"><%= object[i].user_name %></th>
+              
+                <td><a href="/board/<%= object[i].listnum %>"><%= object[i].title%></a></td>
+            
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
 
 </body>
 </html>

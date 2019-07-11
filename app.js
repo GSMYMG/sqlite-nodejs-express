@@ -6,10 +6,14 @@ var logger = require('morgan');
 var session = require('express-session');
 var sqlite3 = require('sqlite3');
 
+
 var loginRouter = require('./routes/login');
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/mypage');
+var mypageRouter = require('./routes/mypage');
 var insertRouter = require('./routes/insert');
+var aplctRouter = require('./routes/aplct');
+var boardRouter = require('./routes/board');
+var board_infoRouter = require('./routes/board');
 
 var app = express();
 
@@ -29,10 +33,15 @@ app.use(session({
     saveUninitialized: true
 }));
 
+
 app.use('/', indexRouter);
-app.use('/mypage', usersRouter);
+app.use('/mypage', mypageRouter);
 app.use('/insert', insertRouter);
 app.use('/login', loginRouter);
+app.use('/aplct', aplctRouter);
+app.use('/board', boardRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -47,9 +56,9 @@ app.use(function (err, req, res, next) {
 
     // render the error page
     res.status(err.status || 500);
+    console.log(err);
     res.render('error');
 });
-
 
 
 module.exports = app;

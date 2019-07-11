@@ -10,7 +10,7 @@ html,body{
 a{
     text-decoration: none;
 }
-div{
+#header, #menu, .name_box, #home, #check .vertical-menu{
     border: 1px solid rgba(0, 0, 0, 0.157);
 }
 #header{
@@ -19,8 +19,7 @@ div{
     top: -10px;
     left: -10px;
     float: left;
-    width: 1928px;
-
+    width: 1928px; 
  }
 
 #header p#logo{
@@ -59,7 +58,7 @@ div{
     top: 300%;
     left: -10px;
     width: 260px;
-    height: 310px;
+   
 }
 .user_box{
     position: absolute;
@@ -141,116 +140,82 @@ div{
 }
 .name_box{
     position: relative;
-    top: -139px;
-    left: 262px;
+    top: -137px;
+    left: 260px;
     width: 1665px;
     height: 91px;
     background: #fff;
 }
 .name_box h1{
     position: relative;
-    left: -150px;
+    left: -120px;
     font-size: 40px;
     line-height: 19px;
     text-align: center;
 }
 .name_box h2{
     position: relative;
-    left: -150px;
+    left: -120px;
     text-align: center;
     font-size: 16px;
     line-height: 1px;
+}  
+form {
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
 }
-iframe{
+form div + div {
+    margin-top: 2em;
+}
+label {
     position: relative;
-    left: 500px;
-    top: -180px;
-    width: 140%;
-    height: 700px;
-}
-form{
-    position: relative; 
-    left: 700px;
-    top: 100px;
-}
-table.noticeboard {
-    position: relative;
-    left: 500px;
     top: -100px;
-    width: 1000px;
-    height: 100px;
-    border-collapse: collapse;
-    text-align: left;
-    line-height: 1.5;
-
+    display: inline-block;
+    width: 400px;
+    font-size: 20px;
+    font-weight: bold
 }
-table.noticeboard thead th {
-    padding: 10px;
-    font-weight: bold;
-    vertical-align: top;
-    color: #369;
-    border-bottom: 3px solid #036;
-}
-table.noticeboard tbody th {
-    width: 150px;
-    padding: 10px;
-    font-weight: bold;
-    vertical-align: top;
-    border-bottom: 1px solid #ccc;
-    background: #f3f6f7;
-}
-table.noticeboard td {
-    width: 350px;
-    padding: 10px;
-    vertical-align: top;
-    border-bottom: 1px solid #ccc;
-}
-tr:hover{
-    color: #4791d2;
-}
-.Post_Box{
+input, textarea {
     position: relative;
-    top: 50px;
-    left: 520px;
-    z-index: 2;
+    top: -100px;
+    font: 1em sans-serif;
+    width: 900px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 2px solid #6292e7;
     border-radius: 5px;
-    background-color: rgba(114, 169, 224, 0.157);
-    
+}
+input:focus, textarea:focus {
+    border-color: #000;
+}
+textarea {
+    vertical-align: top;
+    height: 20em;
+    resize: vertical;
+}
+button{
+position: relative;
+top: -100px;
+left: 790px;
+width:100px;
+background-color: #62a1d8;
+border: none;
+color:#fff;
+padding: 15px 0;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 15px;
+margin: 4px;
+cursor: pointer;
+border-radius: 10px;
+}
+button:hover {
+    background-color: #24527a;
 }
 form{
-    position: relative;
-    top: 70px;
-    left: 190px;
-    border-radius: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    z-index: 1;
-}
-input{
-    border-radius: 3px;
-    width: 500px;
-    height: 40px;
-}
-#update{
-    position: relative;
-    top: -1px;
-    left: 90px;
-    width:300px;
-    background-color: #62a1d8;
-    border: none;
-    color:#fff;
-    padding: 15px 0;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    margin: 4px;
-    cursor: pointer;
-    border-radius: 10px;
-    line-height: 0.8;
-}
-#update:hover {
-    background-color: #51a542b4;
+position: relative;
+left: -220px;
 }
 
-   

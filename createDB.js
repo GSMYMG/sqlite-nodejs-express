@@ -13,14 +13,25 @@ const dropQuery = `
 const insertQuery = `
   CREATE TABLE IF NOT EXISTS person(
     user_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_name VARCHAR(20),
-    user_password VARCHAR(20),
-    user_email VARCHAR(50),
-    user_grade VARCHAR(7),
-    user_class VARCHAR(20),
-    user_number VARCHAR(50)
+    user_name VARCHAR(20) NOT NULL,
+    user_password VARCHAR(20) NOT NULL,
+    user_email VARCHAR(50) NOT NULL,
+    user_grade VARCHAR(7) NOT NULL,
+    user_class VARCHAR(20) NOT NULL,
+    user_number VARCHAR(50) NOT NULL
   )
 `;
+
+const insertQuery2 = `
+    CREATE TABLE IF NOT EXISTS bulletin_board(
+        listnum INTEGER PRIMARY KEY AUTOINCREMENT,
+        title VARCHAR(50),
+        kind VARCHAR(20),
+        story TEXT,
+        user_name VARCHAR(20)
+    )
+`;
+
 
 const dummyDataQuery = `
   insert into person(user_name, user_password, user_email, user_grade, user_class, user_number) values ('doraemong', 'daenamuhelicopter', 'doraemong@naver.com', '2','4', '17'),
